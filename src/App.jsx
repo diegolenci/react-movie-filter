@@ -18,6 +18,19 @@ function App() {
     <>
       <div className="container">
         <h1>Lista films</h1>
+        
+        {/*select per il filtro*/}
+        <div className="mb-5">
+          <select className="form-control" name="" value={genre} onChange={ (e) => setGenre(e.target.value)}>
+            <option value="">Tutti</option>
+            <option value="Fantascienza">Fantascienza</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Romantico">Romantico</option>
+            <option value="Azione">Azione</option>
+          </select>
+        </div>
+        
+        {/*lista film*/}
         <ul className="list-group">
           {
             filteredMovies.map( (movie) => {
