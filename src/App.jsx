@@ -14,6 +14,15 @@ function App() {
   const [filteredMovies, setFilteredMovies] = useState(initialMovies);
   const [genre, setGenre] = useState('')
 
+  useEffect( () => {
+    if(genre !== ''){
+      const selectedMovies = initialMovies.filter( (movie) => movie.genre === genre)
+      setFilteredMovies( selectedMovies )
+    } else {
+      setFilteredMovies( initialMovies )
+    }
+  }, [genre] )
+
   return (
     <>
       <div className="container">
